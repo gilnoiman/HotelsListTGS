@@ -14,7 +14,16 @@
         //get brands list
          BrandsListService.getBrandsList().then(function(data) {
             $scope.brands = data.data;
-        });         
+        });       
+  
+       //remove row:
+       $scope.removeRow = function removeRow(row) {
+         var index = $scope.hotelsRowCollection.indexOf(row);
+         if (index !== -1) {
+            $scope.hotelsRowCollection.splice(index, 1);
+            $scope.hotelsDisplayCollection.splice(index, 1);
+        }
+    }    
 
 
 
